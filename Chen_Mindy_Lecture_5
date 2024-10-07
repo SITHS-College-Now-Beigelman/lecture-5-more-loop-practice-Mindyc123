@@ -1,0 +1,62 @@
+//Mindy Chen
+//Lecture 5
+//10.7.24
+
+#include <iostream> 
+#include <string>
+#include <iomanip>
+
+using namespace std;
+/*Start your program by asking the user:
+How much money their bank account had at the start of the day AND how many bank transactions were done that day.
+Then in a loop, for each transaction do the following:
+Ask for the type of transaction – debit or credit. Also ask for the amount of the transaction.
+If debit, subtract the amount from the account. If credit, add the amount.
+Print out the total in the account after this transaction.
+When all transactions are complete:
+Print the total in the account at the end of the day.	
+Required Extra Credit: Print total debit and total credit amounts for the day.
+*/
+
+int main()
+{
+
+    double money;
+    int transaction;
+    double debit = 0;
+    double credit = 0;
+    double transAmount;
+    string type;
+    char i = 1;
+
+    cout << "How much money is in your bank account?" <<endl;
+    cin >> money;
+    cout << "How many transactions did you do that day?" <<endl;
+    cin >> transaction;
+
+    for ( i = 0; i <= transaction; i++ )
+{
+
+   cout << "What is your transaction type? (debit or credit)" <<endl;
+   cin >> type;
+   cout << "How much is your transaction?" <<endl;
+   cin >> transAmount;
+
+    
+   if (type == "debit")
+   { debit = money - transAmount;
+   cout << "Your total debit is " << debit <<endl;
+   }
+
+   if (type == "credit")
+   { credit = money + transAmount;
+   cout << "Your total credit is " << credit <<endl;
+   }
+}
+
+    cout << "Your total debit for the day is: " << fixed << setprecision(2) << debit <<endl;
+    cout << "Your total credit for the day is: " << fixed << setprecision(2) << credit <<endl;
+
+
+    return 0;
+}
